@@ -148,6 +148,7 @@
     transition: all 0.2s ease 0s;
     color: inherit;
     text-transform: uppercase;
+    align-items: center;
 
     @media (any-hover: hover) {
       &:hover{
