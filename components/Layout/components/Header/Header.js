@@ -25,13 +25,12 @@ export const Header = () => {
             <LanguageMob />
           </nav>
 
-          <button
-            type="button"
+          <div
             className={classNames('burger', { 'burger--active': isBurgerActive })}
             onClick={() => setIsBurgerActive(!isBurgerActive)}
           >
             {[...Array(3).keys()].map((key) => <div key={key} className="burger__line"></div>)}
-          </button>
+          </div>
         </div>
       </div>
     </header>
