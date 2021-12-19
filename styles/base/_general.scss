@@ -55,6 +55,9 @@ body {
 
 .fixed {
   overflow: hidden!important;
+  -webkit-overflow-scrolling: touch;
+  touch-action: none;
+  -ms-touch-action: none;
 }
 
 .tooltip {
