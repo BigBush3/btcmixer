@@ -6,8 +6,21 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "latest",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@material-ui/core": "^4.12.3",
+    "@mui/material": "^5.2.4",
+    "@mui/styles": "^5.2.3",
+    "classnames": "^2.2.6",
+    "next": "10.0.7",
+    "next-images": "^1.8.4",
+    "next-routes": "^1.4.2",
+    "next-translate": "^1.0.7",
+    "node-sass": "^5.0.0",
+    "prop-types": "^15.7.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "uuid": "^3.4.0",
+    "uuidv4": "^6.2.12"
   }
 }

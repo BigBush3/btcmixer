@@ -1,0 +1,18 @@
+{
+  "locales": [
+    "ru",
+    "eng",
+    "fr",
+    "cn"
+  ],
+  "defaultLocale": "eng",
+  "pages": {
+    "*": [
+      "menu"
+    ],
+    "/": [
+      "home",
+      "formMixer"
+    ]
+  }
+}

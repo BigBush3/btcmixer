@@ -1,0 +1,16 @@
+{
+  "checkbox": "ru ru",
+  "tooltipCheckbox": "ru ru ru",
+  "tooltipService": "ru ru ru",
+  "tooltipDelay": "ru ru ru",
+  "label-coin": "Монета",
+  "label-address": "Аддресс",
+  "label-delay": "Задержка",
+  "label-service": "Сервис",
+  "add-address": "ru Add",
+  "delete-address": "ru remove",
+  "total": "ru 5432",
+  "bonus": "бонус",
+  "measuring-quantity": "HOUR ru",
+  "btn-mix": "Микс"
+}

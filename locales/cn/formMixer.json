@@ -1,0 +1,16 @@
+{
+  "checkbox": "AML SCORE",
+  "tooltipCheckbox": "You will receive the mixing  code after the first mixing",
+  "tooltipService": "You will receive the mixing  code after the first mixing",
+  "tooltipDelay": "You will receive the mixing  code after the first mixing",
+  "label-coin": "Coin",
+  "label-address": "Receiver's address",
+  "label-delay": "Delay",
+  "label-service": "Service fee",
+  "add-address": ". Add another address",
+  "delete-address": "Delete address",
+  "total": "total",
+  "bonus": "per each address",
+  "measuring-quantity": "HOUR",
+  "btn-mix": "Mix_coins"
+}
