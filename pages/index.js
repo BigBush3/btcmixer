@@ -1,5 +1,5 @@
-import { MixerForm } from '../components/components/MixerForm';
-import { Layout } from '../components/Layout'
+import { MixerForm } from '../components/MixerForm';
+import { Layout } from '../components/Layout/Layout';
 import useTranslation from 'next-translate/useTranslation';
 
 const layoutProps = {

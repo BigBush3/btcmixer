@@ -1,14 +1,15 @@
 
 import { PropTypes } from 'prop-types';
 import classNames from 'classnames';
+import useTranslation from 'next-translate/useTranslation';
+// 
 import { AddAddress } from './Buttons/AddAddress';
 import { RemoveAddress } from './Buttons/RemoveAddress';
 import { Field } from './Field';
 import { SelectCoins } from './FieldElement/SelectCoins'
 import { InputAddress } from './FieldElement/InputAddress'
 import { SelectDefault } from './FieldElement/SelectDefault';
-import useTranslation from 'next-translate/useTranslation';
-import { TEXT_TOOLTIP } from '../../../../utils/tooltipText';
+import { TEXT_TOOLTIP } from '../../../utils/tooltipText';
 
 export const Address = ({
   amountAddresses,

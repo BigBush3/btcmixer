@@ -1,17 +1,18 @@
-import { SELECT_SERVICE } from '../../../utils/selectData';
+import { useCallback, useState } from 'react';
+import useTranslation from 'next-translate/useTranslation';
+import { v4 as uuidv4 } from 'uuid';
+// 
 import { Tooltip } from '../Tooltip';
 import { AddAddressMob } from './components/Buttons/AddAddressMob';
 import { Checkbox } from './components/Checkbox';
 import { Field } from './components/Field'
 import { SelectDefault } from './components/FieldElement/SelectDefault';
-import { TEXT_TOOLTIP } from '../../../utils/tooltipText';
-import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { Address } from './components/Address';
-import { useCallback } from 'react';
-import useTranslation from 'next-translate/useTranslation';
-import { SELECT_COINS } from '../../../utils/selectData';
-import { SELECT_HOUR } from '../../../utils/selectData';
+import { SELECT_COINS, SELECT_HOUR, SELECT_SERVICE } from '../../utils/selectData';
+import { TEXT_TOOLTIP } from '../../utils/tooltipText';
+
+
+
 
 const selectsData = { SELECT_COINS, SELECT_HOUR };
 

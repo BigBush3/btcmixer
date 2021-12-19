@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useState, useCallback, useMemo } from 'react';
-import imgSelectedCoin from '../../../../../img/select-selected-el.png';
-import { useClickOutside } from '../../../../../hocks/useClickOutside';
+import imgSelectedCoin from '../../../../img/select-selected-el.png';
+import { useClickOutside } from '../../../../hocks/useClickOutside';
 import { PropTypes } from 'prop-types';
 
 export const SelectCoins = ({ coinsList, defaultCoin }) => {

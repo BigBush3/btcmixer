@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useState, useCallback } from 'react';
-import imgSelectedArrow from '../../../../../img/select-selected-el.png';
-import { useClickOutside } from '../../../../../hocks/useClickOutside';
+import imgSelectedArrow from '../../../../img/select-selected-el.png';
+import { useClickOutside } from '../../../../hocks/useClickOutside';
 import { PropTypes } from 'prop-types';
 
 export const SelectDefault = ({ selectData, defaultValue, scale }) => {

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import { Header, Main } from './components';
+import { Header } from './components/Header/Header';
+import { Main } from './components/Main';
 
 const Layout = ({
   title,

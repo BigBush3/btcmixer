@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import classNames from 'classnames';
-import { useClickOutside } from '../../../../hocks/useClickOutside';
-import { LANGUAGES_IMAGE } from '../../../../utils/language';
+import { useClickOutside } from '../../../../../hocks/useClickOutside';
+import { LANGUAGES_IMAGE } from '../../../../../utils/language';
 import { useRouter } from "next/router";
 
 

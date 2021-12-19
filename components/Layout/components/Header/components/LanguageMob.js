@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { LANGUAGES_IMAGE } from '../../../../utils/language';
+import { LANGUAGES_IMAGE } from '../../../../../utils/language';
 import { useRouter } from "next/router";
 import classNames from 'classnames';
 import useTranslation from 'next-translate/useTranslation';

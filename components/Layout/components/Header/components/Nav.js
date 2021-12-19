@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import useTranslation from 'next-translate/useTranslation';
-import { MENU } from '../../../../utils/menu'
+import { MENU } from '../../../../../utils/menu'
 
 
 export const Nav = () => {
