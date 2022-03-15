@@ -1,0 +1,16 @@
+{
+  "checkbox": "AML SCORE",
+  "tooltipCheckbox": "ru ru ru",
+  "tooltipService": "ru ru ru",
+  "tooltipDelay": "ru ru ru",
+  "label-coin": "Монета",
+  "label-address": "Адрес",
+  "label-delay": "Задержка",
+  "label-service": "Сервис",
+  "add-address": "Добавить адрес",
+  "delete-address": "Удалить адрес",
+  "total": "Общее",
+  "bonus": "бонус",
+  "measuring-quantity": "HOUR",
+  "btn-mix": "Микс"
+}
