@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types'
-import MetaTags from 'react-meta-tags';
+import PropTypes from "prop-types"
+import MetaTags from "react-meta-tags"
 import React from "react"
 
 import { Row, Col, CardBody, Card, Alert, Container } from "reactstrap"
@@ -15,7 +15,7 @@ import { AvForm, AvField } from "availity-reactstrap-validation"
 import { loginUser, apiError } from "../../store/actions"
 
 // import images
-import logoSm from "../../assets/images/logo-sm.png";
+import logoSm from "../../assets/images/logo-sm.png"
 
 const Login = props => {
   // handleValidSubmit
@@ -32,9 +32,7 @@ const Login = props => {
               <Card className="overflow-hidden">
                 <div className="bg-primary">
                   <div className="text-primary text-center p-4">
-                    <h5 className="text-white font-size-20">
-                      Crypto mixer
-                        </h5>
+                    <h5 className="text-white font-size-20">Crypto mixer</h5>
                   </div>
                 </div>
 
@@ -78,10 +76,9 @@ const Login = props => {
                             type="submit"
                           >
                             Log In
-                              </button>
+                          </button>
                         </Col>
                       </Row>
-                      
                     </AvForm>
                   </div>
                 </CardBody>

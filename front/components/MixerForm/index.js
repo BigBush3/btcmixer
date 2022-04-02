@@ -14,12 +14,12 @@ import {
   SELECT_SERVICE,
 } from "../../utils/selectData";
 import { TEXT_TOOLTIP } from "../../utils/tooltipText";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 const selectsData = { SELECT_COINS, SELECT_HOUR };
 
 export const MixerForm = () => {
-  const router = useRouter()
+  const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
   const [addresses, setAddresses] = useState([
     {
@@ -58,9 +58,13 @@ export const MixerForm = () => {
 
   const countAddress = () => {
     if (addresses.length >= 2) {
-      router.push("/mixing")
+      router.push("/mixing");
+      const result = addresses.map(value => value.address)
+      console.log(result)
+      // const arrayAddresses = { addresses: [] }
+      // axios.post("127.0.0.1:5000/auth/address", {  });
     }
-  };  
+  };
 
   return (
     <form className="mixer-form">
@@ -119,7 +123,7 @@ export const MixerForm = () => {
             onClick={() => countAddress()}
           >
             {t("btn-mix")}
-          </button> 
+          </button>
         </div>
         <div className="mixer-from-mix__total">
           <div className="mixer-from-mix__total-label">{t("total")}:</div>

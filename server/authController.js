@@ -34,12 +34,13 @@ class authController {
       const user = new User({
         username,
         password: hashPassword,
-        role: userRole.value,
+        role: userRole,
       });
       await user.save();
       return res.json({ message: "Пользователь успешно зарегистрирован" });
     } catch (e) {
       res.status(400).json({ message: "Registration error" });
+      console.log(e)
     }
   }
 

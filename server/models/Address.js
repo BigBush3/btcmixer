@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const Address = new Schema({
-  address: { type: String, required: true },
+  arrayAddress: {type: Array, required: true}
 });
 
 module.exports = model("Address", Address);

@@ -1,4 +1,5 @@
-import { PropTypes } from 'prop-types';
+import { PropTypes } from "prop-types";
+import { useState } from "react";
 
 export const InputAddress = ({ value }) => {
   return (
@@ -12,8 +13,8 @@ export const InputAddress = ({ value }) => {
       />
     </div>
   );
-}
+};
 
 InputAddress.propTypes = {
   value: PropTypes.string,
-}
+};
