@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useTranslation from "next-translate/useTranslation";
 import { v4 as uuidv4 } from "uuid";
 //
@@ -7,33 +7,66 @@ import { AddAddressMob } from "./components/Buttons/AddAddressMob";
 import { Checkbox } from "./components/Checkbox";
 import { Field } from "./components/Field";
 import { SelectDefault } from "./components/FieldElement/SelectDefault";
-import { Address } from "./components/Address";
 import { SELECT_HOUR, SELECT_SERVICE } from "../../utils/selectData";
 import { TEXT_TOOLTIP } from "../../utils/tooltipText";
 import { useRouter } from "next/router";
+import { Address } from "./components/Address";
 
 const selectsData = { SELECT_HOUR };
 
 export const MixerForm = () => {
   const router = useRouter();
-  const [sums, setSums] = useState(["", "xuy", "", "", ""])
-  const [addresss, setAddresss] = useState(["", "xuy", "", "", ""])
-  const [delays, setDelays] = useState(["", "xuy", "", "", ""])
   const [isChecked, setIsChecked] = useState(false);
+  const [total, setTotal] = useState(0);
+  let sums = ["", "", "", "", ""];
   const [addresses, setAddresses] = useState([
     {
-      sum: sums[0],
-      address: addresss[0],
-      delay: delays[0],
+      sum: "",
+      address: "",
+      delay: "0",
       isRemovable: false,
+      id: 0,
       key: uuidv4(),
     },
   ]);
   const { t } = useTranslation("formMixer");
-
-  const totalSum = () => {
-
-  }
+  setInterval(function () {
+    if (typeof window !== "undefined") {
+      if (addresses.length === 1) {
+        const sum0 = parseFloat(localStorage.getItem("sum"));
+        sums = [sum0];
+      }
+      if (addresses.length === 2) {
+        const sum0 = parseFloat(localStorage.getItem("sum"));
+        const sum1 = parseFloat(localStorage.getItem("sum1"));
+        sums = [sum0, sum1];
+      }
+      if (addresses.length === 3) {
+        const sum0 = parseFloat(localStorage.getItem("sum"));
+        const sum1 = parseFloat(localStorage.getItem("sum1"));
+        const sum2 = parseFloat(localStorage.getItem("sum2"));
+        sums = [sum0, sum1, sum2];
+      }
+      if (addresses.length === 4) {
+        const sum0 = parseFloat(localStorage.getItem("sum"));
+        const sum1 = parseFloat(localStorage.getItem("sum1"));
+        const sum2 = parseFloat(localStorage.getItem("sum2"));
+        const sum3 = parseFloat(localStorage.getItem("sum3"));
+        sums = [sum0, sum1, sum2, sum3];
+      }
+      if (addresses.length === 5) {
+        const sum0 = parseFloat(localStorage.getItem("sum"));
+        const sum1 = parseFloat(localStorage.getItem("sum1"));
+        const sum2 = parseFloat(localStorage.getItem("sum2"));
+        const sum3 = parseFloat(localStorage.getItem("sum3"));
+        const sum4 = parseFloat(localStorage.getItem("sum4"));
+        sums = [sum0, sum1, sum2, sum3, sum4];
+      }
+      const count = (sumss) => sumss.reduce((acc, num) => acc + num, 0);
+      const total = count(sums);
+      setTotal(total);
+    }
+  }, 1500);
 
   const handleCheckout = useCallback(() => {
     setIsChecked(!isChecked);
@@ -43,10 +76,11 @@ export const MixerForm = () => {
     setAddresses((prev) => [
       ...prev,
       {
-        sum: sums[addresses.length],
-        address: addresss[addresses.length],
-        delay: delays[addresses.length],
+        sum: "",
+        address: "",
+        delay: "0",
         isRemovable: true,
+        id: addresses.length,
         key: uuidv4(),
       },
     ]);
@@ -55,14 +89,18 @@ export const MixerForm = () => {
   const deleteAddress = useCallback(
     (key) => {
       setAddresses((prev) => prev.filter((address) => address.key !== key));
+      localStorage.clear()
     },
     [addresses]
   );
 
   const countAddress = () => {
+    if (addresses.length <= 1) {
+      localStorage.clear();
+    }
     if (addresses.length >= 2) {
       router.push("/mixing");
-      console.log(addresses[0])
+      localStorage.clear();
     }
   };
 
@@ -127,7 +165,7 @@ export const MixerForm = () => {
         </div>
         <div className="mixer-from-mix__total">
           <div className="mixer-from-mix__total-label">{t("total")}:</div>
-          <div className="mixer-from-mix__total-value">3.4209 BTC</div>
+          <div className="mixer-from-mix__total-value">{total}</div>
         </div>
       </div>
     </form>

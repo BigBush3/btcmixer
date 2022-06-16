@@ -1,4 +1,4 @@
-import { PropTypes } from "prop-types";
+import { object, PropTypes } from "prop-types";
 import classNames from "classnames";
 import useTranslation from "next-translate/useTranslation";
 //
@@ -18,7 +18,8 @@ export const Address = ({
   deleteAddress,
 }) => {
   const { t } = useTranslation("formMixer");
-  const { sum, address, delay, isRemovable, key } = defaultValueField;
+  const { sum, address, delay, isRemovable, key, id } =
+    defaultValueField;
 
   return (
     <li
@@ -27,14 +28,14 @@ export const Address = ({
       })}
     >
       <Field classmodify="mixer-form-params__sum" label={t("label-sum")}>
-        <InputSum value={sum}/>
+        <InputSum id={id} />
       </Field>
 
       <Field
         classmodify="mixer-form-params__address"
         label={t("label-address")}
       >
-        <InputAddress />
+        <InputAddress id={id} />
       </Field>
 
       <Field
