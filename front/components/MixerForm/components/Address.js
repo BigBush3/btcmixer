@@ -5,10 +5,10 @@ import useTranslation from "next-translate/useTranslation";
 import { AddAddress } from "./Buttons/AddAddress";
 import { RemoveAddress } from "./Buttons/RemoveAddress";
 import { Field } from "./Field";
-import { SelectCoins } from "./FieldElement/SelectCoins";
 import { InputAddress } from "./FieldElement/InputAddress";
 import { SelectDefault } from "./FieldElement/SelectDefault";
 import { TEXT_TOOLTIP } from "../../../utils/tooltipText";
+import { InputSum } from "./FieldElement/InputSum";
 
 export const Address = ({
   amountAddresses,
@@ -18,7 +18,7 @@ export const Address = ({
   deleteAddress,
 }) => {
   const { t } = useTranslation("formMixer");
-  const { coin, address, delay, isRemovable, key } = defaultValueField;
+  const { sum, address, delay, isRemovable, key } = defaultValueField;
 
   return (
     <li
@@ -26,8 +26,8 @@ export const Address = ({
         "mixer-form-params--multiple": amountAddresses !== 1,
       })}
     >
-      <Field classmodify="mixer-form-params__coin" label={t("label-coin")}>
-        <SelectCoins coinsList={selectsData.SELECT_COINS} defaultCoin={coin} />
+      <Field classmodify="mixer-form-params__sum" label={t("label-sum")}>
+        <InputSum value={sum}/>
       </Field>
 
       <Field
