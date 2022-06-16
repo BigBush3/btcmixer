@@ -13,7 +13,7 @@ app.use("/auth", authRouter)
 
 const start = async () => {
     try {
-        await mongoose.connect(`mongodb+srv://root:root@cluster0.ncxao.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, {
+        await mongoose.connect(`mongodb+srv://root:root@cluster0.stbi0.mongodb.net/?retryWrites=true&w=majority`, {
             useUnifiedTopology: true,
             useNewUrlParser: true
         })

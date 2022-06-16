@@ -8,29 +8,32 @@ import { Checkbox } from "./components/Checkbox";
 import { Field } from "./components/Field";
 import { SelectDefault } from "./components/FieldElement/SelectDefault";
 import { Address } from "./components/Address";
-import {
-  SELECT_COINS,
-  SELECT_HOUR,
-  SELECT_SERVICE,
-} from "../../utils/selectData";
+import { SELECT_HOUR, SELECT_SERVICE } from "../../utils/selectData";
 import { TEXT_TOOLTIP } from "../../utils/tooltipText";
 import { useRouter } from "next/router";
 
-const selectsData = { SELECT_COINS, SELECT_HOUR };
+const selectsData = { SELECT_HOUR };
 
 export const MixerForm = () => {
   const router = useRouter();
+  const [sums, setSums] = useState(["", "xuy", "", "", ""])
+  const [addresss, setAddresss] = useState(["", "xuy", "", "", ""])
+  const [delays, setDelays] = useState(["", "xuy", "", "", ""])
   const [isChecked, setIsChecked] = useState(false);
   const [addresses, setAddresses] = useState([
     {
-      coin: "btc",
-      address: "",
-      delay: "0",
+      sum: sums[0],
+      address: addresss[0],
+      delay: delays[0],
       isRemovable: false,
       key: uuidv4(),
     },
   ]);
   const { t } = useTranslation("formMixer");
+
+  const totalSum = () => {
+
+  }
 
   const handleCheckout = useCallback(() => {
     setIsChecked(!isChecked);
@@ -40,9 +43,9 @@ export const MixerForm = () => {
     setAddresses((prev) => [
       ...prev,
       {
-        coin: "btc",
-        address: "",
-        delay: "0",
+        sum: sums[addresses.length],
+        address: addresss[addresses.length],
+        delay: delays[addresses.length],
         isRemovable: true,
         key: uuidv4(),
       },
@@ -59,10 +62,7 @@ export const MixerForm = () => {
   const countAddress = () => {
     if (addresses.length >= 2) {
       router.push("/mixing");
-      const result = addresses.map(value => value.address)
-      console.log(result)
-      // const arrayAddresses = { addresses: [] }
-      // axios.post("127.0.0.1:5000/auth/address", {  });
+      console.log(addresses[0])
     }
   };
 

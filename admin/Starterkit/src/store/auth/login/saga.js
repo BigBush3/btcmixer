@@ -23,7 +23,8 @@ function* loginUser({ payload: { user, history } }) {
         user.password
       )
       yield put(loginSuccess(response))
-    } else if (process.env.REACT_APP_DEFAULTAUTH === "jwt") {
+    } else if (process.env.REACT_APP_DEFAULTAUTH === "JWT") {
+      console.log('are we here?')
       const response = yield call(postJwtLogin, {
         username: user.username,
         password: user.password,
