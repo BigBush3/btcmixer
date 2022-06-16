@@ -315,6 +315,13 @@
 }
 
 // section mixer
+.bitcoin{
+  cursor: pointer;
+}
+.bitcoin:hover{
+  transition: all .2s ease;
+  color: blue;
+}
 .mixer {
   padding-top: 54px;
   padding-bottom: 30px;
@@ -322,17 +329,23 @@
   @include md-block {
     padding-top: 22px;
   }
-
+  &__table {
+    border: dashed whitesmoke 2px;
+    padding: 10px;
+  }
+  &__status{
+    font-size: 25px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
   &__title {
     margin-bottom: 70px;
 
     font-size: 36px;
     font-weight: 700;
     letter-spacing: 0.075em;
-
-    @include md-block {
-      display: none;
-    }
   }
 }
 
