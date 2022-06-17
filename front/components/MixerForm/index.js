@@ -18,7 +18,12 @@ export const MixerForm = () => {
   const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
   const [total, setTotal] = useState(0);
-  let sums = ["", "", "", "", ""];
+  const [sum0, setSum0] = useState("");
+  const [sum1, setSum1] = useState("");
+  const [sum2, setSum2] = useState("");
+  const [sum3, setSum3] = useState("");
+  const [sum4, setSum4] = useState("");
+  let sums = [];
   const [addresses, setAddresses] = useState([
     {
       sum: "",
@@ -30,43 +35,66 @@ export const MixerForm = () => {
     },
   ]);
   const { t } = useTranslation("formMixer");
-  setInterval(function () {
-    if (typeof window !== "undefined") {
-      if (addresses.length === 1) {
-        const sum0 = parseFloat(localStorage.getItem("sum"));
-        sums = [sum0];
+
+  const count = (sumss) => sumss.reduce((acc, num) => acc + num, 0);
+  useEffect(() => {
+    setInterval(function () {
+      if (typeof window !== "undefined") {
+        if (addresses.length === 1) {
+          const sum0 = parseFloat(localStorage.getItem("sum"));
+          setSum0(sum0);
+          sums = [sum0];
+        }
+        if (addresses.length === 2) {
+          const sum0 = parseFloat(localStorage.getItem("sum"));
+          const sum1 = parseFloat(localStorage.getItem("sum1"));
+          setSum0(sum0);
+          setSum1(sum1);
+          sums = [sum0, sum1];
+        }
+        if (addresses.length === 3) {
+          const sum0 = parseFloat(localStorage.getItem("sum"));
+          const sum1 = parseFloat(localStorage.getItem("sum1"));
+          const sum2 = parseFloat(localStorage.getItem("sum2"));
+          setSum0(sum0);
+          setSum1(sum1);
+          setSum2(sum2);
+          sums = [sum0, sum1, sum2];
+        }
+        if (addresses.length === 4) {
+          const sum0 = parseFloat(localStorage.getItem("sum"));
+          const sum1 = parseFloat(localStorage.getItem("sum1"));
+          const sum2 = parseFloat(localStorage.getItem("sum2"));
+          const sum3 = parseFloat(localStorage.getItem("sum3"));
+          setSum0(sum0);
+          setSum1(sum1);
+          setSum2(sum2);
+          setSum3(sum3);
+          sums = [sum0, sum1, sum2, sum3];
+        }
+        if (addresses.length === 5) {
+          const sum0 = parseFloat(localStorage.getItem("sum"));
+          const sum1 = parseFloat(localStorage.getItem("sum1"));
+          const sum2 = parseFloat(localStorage.getItem("sum2"));
+          const sum3 = parseFloat(localStorage.getItem("sum3"));
+          const sum4 = parseFloat(localStorage.getItem("sum4"));
+          setSum0(sum0);
+          setSum1(sum1);
+          setSum2(sum2);
+          setSum3(sum3);
+          setSum4(sum4);
+          sums = [sum0, sum1, sum2, sum3, sum4];
+        }
+        let totalPre = count(sums);
+        if (isChecked === true) {
+          const total = totalPre - totalPre * 0.02;
+          setTotal(total);
+        } else {
+          setTotal(totalPre);
+        }
       }
-      if (addresses.length === 2) {
-        const sum0 = parseFloat(localStorage.getItem("sum"));
-        const sum1 = parseFloat(localStorage.getItem("sum1"));
-        sums = [sum0, sum1];
-      }
-      if (addresses.length === 3) {
-        const sum0 = parseFloat(localStorage.getItem("sum"));
-        const sum1 = parseFloat(localStorage.getItem("sum1"));
-        const sum2 = parseFloat(localStorage.getItem("sum2"));
-        sums = [sum0, sum1, sum2];
-      }
-      if (addresses.length === 4) {
-        const sum0 = parseFloat(localStorage.getItem("sum"));
-        const sum1 = parseFloat(localStorage.getItem("sum1"));
-        const sum2 = parseFloat(localStorage.getItem("sum2"));
-        const sum3 = parseFloat(localStorage.getItem("sum3"));
-        sums = [sum0, sum1, sum2, sum3];
-      }
-      if (addresses.length === 5) {
-        const sum0 = parseFloat(localStorage.getItem("sum"));
-        const sum1 = parseFloat(localStorage.getItem("sum1"));
-        const sum2 = parseFloat(localStorage.getItem("sum2"));
-        const sum3 = parseFloat(localStorage.getItem("sum3"));
-        const sum4 = parseFloat(localStorage.getItem("sum4"));
-        sums = [sum0, sum1, sum2, sum3, sum4];
-      }
-      const count = (sumss) => sumss.reduce((acc, num) => acc + num, 0);
-      const total = count(sums);
-      setTotal(total);
-    }
-  }, 1500);
+    }, 1500);
+  }, [sum0]);
 
   const handleCheckout = useCallback(() => {
     setIsChecked(!isChecked);
@@ -89,7 +117,7 @@ export const MixerForm = () => {
   const deleteAddress = useCallback(
     (key) => {
       setAddresses((prev) => prev.filter((address) => address.key !== key));
-      localStorage.clear()
+      localStorage.clear();
     },
     [addresses]
   );
