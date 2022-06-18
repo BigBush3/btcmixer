@@ -16,6 +16,7 @@ export const Address = ({
   defaultValueField,
   addAddress,
   deleteAddress,
+  total,
 }) => {
   const { t } = useTranslation("formMixer");
   const { sum, address, delay, isRemovable, key, id } =
@@ -28,7 +29,7 @@ export const Address = ({
       })}
     >
       <Field classmodify="mixer-form-params__sum" label={t("label-sum")}>
-        <InputSum id={id} />
+        <InputSum id={id} func={total} />
       </Field>
 
       <Field
