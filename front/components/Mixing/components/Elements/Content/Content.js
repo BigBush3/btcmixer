@@ -33,7 +33,9 @@ export default function Content({ percent, functionPercent }) {
           }}
           className="address-block"
         >
-          <div className="address-block__address">bc1qdeaze2de4gjl4tg9fsp3awd4426x60zjx9s9gy</div>
+          <div className="address-block__address">
+            bc1qdeaze2de4gjl4tg9fsp3awd4426x60zjx9s9gy
+          </div>
           <div className="address-block__delay">Задержка: 3 часа</div>
         </div>
       </Box>
